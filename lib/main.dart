@@ -84,13 +84,8 @@ Page resource error:
           ''');
           },
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.youtube.com/')) {
-              debugPrint('blocking navigation to ${request.url}');
-              return NavigationDecision.prevent;
-            }
-            debugPrint('allowing navigation to ${request.url}');
-            return NavigationDecision.navigate;
-          },
+        return NavigationDecision.navigate; //this work for me 
+      },
           onUrlChange: (UrlChange change) {
             debugPrint('url change to ${change.url}');
           },
